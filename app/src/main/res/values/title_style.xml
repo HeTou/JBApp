@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bar_height">45dp</dimen>
+    <dimen name="bar_leftbtn_size">16sp</dimen>
+    <dimen name="bar_title_size">20sp</dimen>
+
+    <color name="bar_bg">#333333</color>
+    <color name="bar_title_color">#ffffff</color>
+</resources>

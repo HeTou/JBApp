@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--常规的颜色-->
+    <color name="transparent">#00000000</color>   //透明
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
