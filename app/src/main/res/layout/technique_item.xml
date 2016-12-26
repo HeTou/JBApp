@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/technique_list_item_img"
+        />
+    <RelativeLayout
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/title"
+            android:text="标题"
+            android:textColor="@color/color_font_black"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/dec"
+            android:text="描述"
+            android:textColor="@color/color_font_black"
+            android:textSize="14sp"
+            android:layout_below="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

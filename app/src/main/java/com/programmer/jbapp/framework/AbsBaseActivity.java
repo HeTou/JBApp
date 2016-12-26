@@ -12,6 +12,7 @@ import com.programmer.jbapp.common.StyleConfig;
 
 public class AbsBaseActivity extends AppCompatActivity {
 
+
     private ImageView barleftimg;
     private TextView bartitle;
 
@@ -25,6 +26,12 @@ public class AbsBaseActivity extends AppCompatActivity {
     public void initBar(Activity activity) {
         bartitle = (TextView) findViewById(R.id.bar_title);
         barleftimg = (ImageView) findViewById(R.id.bar_leftimg);
+        barleftimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     public void setBarLeftImg(int resId){

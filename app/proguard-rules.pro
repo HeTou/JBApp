@@ -52,3 +52,12 @@
 
 #------------------------以上是基础配置----------------------------------------------------------------------------
 
+# TODO 极光推送
+#-dontoptimize      上文已有这里注释掉
+#-dontpreverify
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+
+# TODO PLDroidPlayer
+-keep class com.pili.pldroid.player.** { *; }
+-keep class tv.danmaku.ijk.media.player.** {*;}

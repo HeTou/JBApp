@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':BaseLibs', ':ImRecordButton', ':ShortVideo', ':QrCode', ':app2', ':sample', ':library'

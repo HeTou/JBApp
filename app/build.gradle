@@ -1,6 +1,6 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'     //声明构建的项目类型，这里当然是android了。。。
 
-android {
+android {               //设置编译android项目的参数，接下来，我们的构建android项目的所有配置都在这里完成。
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
 
@@ -10,17 +10,103 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+//        multiDexEnabled true        //65k
     }
     buildTypes {
         release {
+            // 混淆
             minifyEnabled false
+            // Zipalign优化
+//            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+//                    output.outputFile = new File(output.outputFile.parent, defaultConfig.applicationId + "-" + buildType.name + "-v" +
+//                            defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk");
+                    def outputFile = output.outputFile
+                    def backageName = "jbapp";             //这里是应用的名字
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        //这里修改apk文件名
+                        def fileName = backageName + "_${variant.productFlavors[0].name}-v${defaultConfig.versionCode}(${defaultConfig.versionName}).apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+
+    sourceSets.main {            //支持jar包，（有jar包时需要）
+        jniLibs.srcDirs = ['libs']
+        java.srcDirs=['src/main/java','src/main/java-gen']
+    }
+
+
+
+    productFlavors {            //用于进行多渠道打包,
+        kuan {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "kuan"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        qh360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        zs91 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "91"]
+        }
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+        flyme {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "flyme"]
+        }
+        csq {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "csq"]
+        }
+        tencent {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "tencent"]
+        }
+        zft {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "zft"]
         }
     }
 }
 
+//allprojects {           //错误或过时代码的详细信息
+//    gradle.projectsEvaluated {
+//        tasks.withType(JavaCompile) {
+//            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+//        }
+//    }
+//}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
+    compile files('libs/jpush-android-2.2.0.jar')
+    compile files('libs/nineoldandroids-2.4.0.jar')
+    compile 'org.greenrobot:greendao-generator:3.2.0'
+    //    compile "com.yqritc:android-scalablevideoview:${LIB_SCALABLE_VIDEOVIEW_VERSION}"
+    compile 'com.yqritc:android-scalablevideoview:1.0.4'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile project(':ImRecordButton')
+    compile project(':QrCode')
+    compile project(':ShortVideo')
+    compile project(':BaseLibs')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+//    七牛PLDroidPlayer 依赖
+    compile 'com.qiniu:happy-dns:0.2.+'
+    compile 'com.qiniu.pili:pili-android-qos:0.8.+'
 }
