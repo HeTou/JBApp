@@ -15,6 +15,7 @@ buildscript {           //说白了就是设置脚本的运行环境
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 

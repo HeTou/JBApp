@@ -1,5 +1,6 @@
 package com.programmer.jbapp.module.technique;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -60,14 +61,17 @@ public class TechniqueListActivity extends AbsBaseActivity implements AdapterVie
         Iterator<String> it = className.iterator();
         while (it.hasNext()) {
             String str = it.next();
-            Technique technique = new Technique();
             try {
-                ItemInfo itemInfo = (ItemInfo) (Class.forName(str).newInstance());
-                technique.setTitle(itemInfo.getItemName());
-                technique.setDec(itemInfo.getItemDec());
-                technique.setClassName(str);
-                System.out.println(str);
-                mList.add(technique);
+                Class<?> aClass = Class.forName(str);
+                if(Activity.class.isAssignableFrom(aClass)) {
+                    Technique technique = new Technique();
+                    ItemInfo itemInfo = (ItemInfo) (Class.forName(str).newInstance());
+                    technique.setTitle(itemInfo.getItemName());
+                    technique.setDec(itemInfo.getItemDec());
+                    technique.setClassName(str);
+                    System.out.println(str);
+                    mList.add(technique);
+                }
             }  catch (Exception e) {
                 e.printStackTrace();
             }

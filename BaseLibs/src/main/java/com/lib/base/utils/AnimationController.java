@@ -106,6 +106,13 @@ public class AnimationController
 		animation.setStartOffset(delayMillis);
 	}
 
+	/***
+	 * 根据不同的参数显示不同的动画
+	 * @param view
+	 * @param animation   动画类
+	 * @param durationMillis  动画的执行时间
+	 * @param delayMillis	动画开始时间
+     */
 	private void baseIn(View view, Animation animation, long durationMillis, long delayMillis)
 	{
 		setEffect(animation, Default, durationMillis, delayMillis);
