@@ -7,16 +7,18 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
+        android:name=".application.JBApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".application.JBApplication"
         android:theme="@style/AppTheme">
 
+        <!--TODO activity  start -->
         <!--欢迎界面-->
         <activity android:name=".module.SplashActivity">
             <intent-filter>
@@ -35,7 +37,7 @@
             android:screenOrientation="portrait" />
         <!--侧滑-->
         <activity
-            android:name="com.programmer.jbapp.module.technique.item.DragLayoutActivity"
+            android:name="com.programmer.jbapp.module.view.item.Widget_DragLayoutActivity"
             android:screenOrientation="portrait" />
         <!--短视频录制-->
         <activity
@@ -53,19 +55,46 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
         <!--水波纹控件-->
-        <activity android:name="com.programmer.jbapp.module.technique.item.WaveViewActivity"
+        <activity
+            android:name="com.programmer.jbapp.module.view.item.Widget_WaveViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            ></activity>
+            android:windowSoftInputMode="adjustPan"></activity>
         <!--字母索引控件-->
-        <activity android:name="com.programmer.jbapp.module.technique.item.SideBarActivity"
+        <activity
+            android:name="com.programmer.jbapp.module.view.item.Widget_SideBarActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            ></activity>
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--百度地图-->
+        <activity
+            android:name="com.programmer.jbapp.module.technique.item.BaiduMapActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--卡片层叠控件-->
+        <activity
+            android:name="com.programmer.jbapp.module.view.item.Widget_FlingSwipeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+   <!--刷新控件-->
+        <activity
+            android:name="com.programmer.jbapp.module.view.item.Widget_RefreshLayoutActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--控件列表-->
+        <activity
+            android:name="com.programmer.jbapp.module.view.ViewListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!--TODO Activity   end  -->
 
 
+        <!--TODO service    start -->
         <!--TODO 极光推送-->
         <!-- Required SDK 核心功能-->
         <!-- option since 2.0.5 可配置PushService，DaemonService,PushReceiver,AlarmReceiver的android:process参数 将JPush相关组件设置为一个独立进程 -->
@@ -166,6 +195,18 @@
         <meta-data
             android:name="JPUSH_APPKEY"
             android:value="19057bb43a328a4745319d8e" />
+
+        <!--TODO 百度地图-->
+        <!--Required.Appkey-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="jALemYPDm0xly74ugspgRAlE3cCR6b6s" />
+
+        <!--TODO 百度定位-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
     </application>
 
 
@@ -196,4 +237,36 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+
+
+    <!--TODO 百度地图-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!--TODO 百度定位-->
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 </manifest>

@@ -35,7 +35,7 @@ public class InactivityTimer {
 
     private static final String TAG = InactivityTimer.class.getSimpleName();
 
-    private static final long INACTIVITY_DELAY_MS = 5 * 60 * 1000L;
+    private static final long INACTIVITY_DELAY_MS = 5 * 60 * 1000L;     //5分钟
 
     private Activity activity;
     private BroadcastReceiver powerStatusReceiver;
@@ -53,14 +53,14 @@ public class InactivityTimer {
     public synchronized void onActivity() {
         cancel();
         inactivityTask = new InactivityAsyncTask();
-        if (Build.VERSION.SDK_INT >= 11) {
+        if (Build.VERSION.SDK_INT >= 11) {      //并行执行任务
             inactivityTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         } else {
             inactivityTask.execute();
         }
     }
 
-    public synchronized void onPause() {
+    public synchronized void onPause() {    //取消线程任务
         cancel();
         if (registered) {
             activity.unregisterReceiver(powerStatusReceiver);

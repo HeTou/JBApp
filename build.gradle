@@ -5,7 +5,7 @@ buildscript {           //说白了就是设置脚本的运行环境
         jcenter()           //maven仓库位于通过方法jcenter() 获取
     }
     dependencies {          //依赖包的定义。支持maven/ivy，远程，本地库，也支持单文件
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.2.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

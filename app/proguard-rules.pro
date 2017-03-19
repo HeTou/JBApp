@@ -10,9 +10,9 @@
 # Add any project specific keep options here:
 
 # If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
+# and specify the fully qualified class name to the JavaScript interfaces
 # class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#-keepclassmembers class fqcn.of.javascript.interfaces.for.webview {
 #   public *;
 #}
 
@@ -61,3 +61,8 @@
 # TODO PLDroidPlayer
 -keep class com.pili.pldroid.player.** { *; }
 -keep class tv.danmaku.ijk.media.player.** {*;}
+
+#TODO 百度地图
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}
+-dontwarn com.baidu.**

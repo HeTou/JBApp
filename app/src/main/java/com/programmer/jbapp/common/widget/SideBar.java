@@ -1,6 +1,6 @@
+package com.programmer.jbapp.common.widget;
 
-package com.example.searchlistview.view;
-
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * ListView侧边按照A-Z排序的SideBar控件
@@ -157,4 +158,46 @@ public class SideBar extends View {
         this.listener = listener;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static class HintDialog{
+        private Context context;
+        private Dialog dialog;
+
+        private TextView text;
+
+        public HintDialog(Context context) {
+            this.context = context;
+            text = new TextView(context);
+        }
+
+        public void show(String s){
+
+            if(dialog==null){
+                dialog = new Dialog(context);
+                dialog.setContentView(text);
+            }
+            text.setText(s);
+            if(dialog.isShowing()){
+
+            }
+        }
+        public void dismiss(){
+            if(dialog!=null){
+                dialog.dismiss();
+            }
+        }
+
+    }
 }

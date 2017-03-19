@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:clipChildren="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/bar_bg"
+    android:layout_height="match_parent">
+    <include layout="@layout/activity_title"></include>
+    <com.programmer.jbapp.common.widget.flingswipe.SwipeFlingAdapterView
+        android:id="@+id/swipefling"
+        android:layout_width="match_parent"
+        swipe:rotation_degrees="10"
+        swipe:y_offset_step="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <Button
+        android:background="@drawable/flingswipe_collect_rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="收藏"
+        />
+</LinearLayout>

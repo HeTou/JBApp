@@ -7,7 +7,14 @@ package com.programmer.jbapp.common.bean;
 public class Moudle {
     private int img;
     private String name;
+    private Class activity;
 
+
+    public Moudle(int img, String name, Class activity) {
+        this.img = img;
+        this.name = name;
+        this.activity = activity;
+    }
 
     public int getImg() {
         return img;
@@ -22,6 +29,15 @@ public class Moudle {
     }
 
     public void setName(String name) {
+
         this.name = name;
+    }
+
+    public Class getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Class activity) {
+        this.activity = activity;
     }
 }

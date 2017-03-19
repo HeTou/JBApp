@@ -52,11 +52,11 @@ public class TechniqueListActivity extends AbsBaseActivity implements AdapterVie
     private void refreshData() {
 //        Technique technique = new Technique();
 //        technique.setTitle("侧滑菜单控件");
-//        technique.setClassName("com.programmer.jbapp.module.technique.item.DragLayoutActivity");
+//        technique.setClassName("com.programmer.jbapp.module.view.item.Widget_DragLayoutActivity");
 //
 //        Technique technique2 = new Technique();
 //        technique2.setTitle("录制短视频");
-//        technique2.setClassName("com.programmer.jbapp.module.technique.item.DragLayoutActivity");
+//        technique2.setClassName("com.programmer.jbapp.module.view.item.Widget_DragLayoutActivity");
         Set<String> className = ClassUtils.getClassName(this, "com.programmer.jbapp.module.technique.item");
         Iterator<String> it = className.iterator();
         while (it.hasNext()) {

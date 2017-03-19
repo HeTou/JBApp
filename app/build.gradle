@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'     //声明构建的项目类型，这里当然是android了。。。
 
 android {               //设置编译android项目的参数，接下来，我们的构建android项目的所有配置都在这里完成。
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.1'
 
     defaultConfig {
         applicationId "com.programmer.jbapp"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
 //        multiDexEnabled true        //65k
@@ -39,9 +39,12 @@ android {               //设置编译android项目的参数，接下来，我�
     }
 
 
-    sourceSets.main {            //支持jar包，（有jar包时需要）
-        jniLibs.srcDirs = ['libs']
-        java.srcDirs=['src/main/java','src/main/java-gen']
+    sourceSets {            //支持so包，（有so包时需要）
+        main {
+            jniLibs.srcDir 'libs'
+//            jniLibs.srcDirs = ['libs']
+//        java.srcDirs=['src/main/java','src/main/java-gen']
+        }
     }
 
 
@@ -94,19 +97,18 @@ android {               //设置编译android项目的参数，接下来，我�
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile files('libs/jpush-android-2.2.0.jar')
-    compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'org.greenrobot:greendao-generator:3.2.0'
     //    compile "com.yqritc:android-scalablevideoview:${LIB_SCALABLE_VIDEOVIEW_VERSION}"
     compile 'com.yqritc:android-scalablevideoview:1.0.4'
-    compile 'org.greenrobot:greendao:3.2.0'
+    //短视频播放控件
     compile project(':ImRecordButton')
     compile project(':QrCode')
     compile project(':ShortVideo')
     compile project(':BaseLibs')
     compile 'com.github.bumptech.glide:glide:3.7.0'
-//    七牛PLDroidPlayer 依赖
+    //    七牛PLDroidPlayer 依赖
     compile 'com.qiniu:happy-dns:0.2.+'
     compile 'com.qiniu.pili:pili-android-qos:0.8.+'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:recyclerview-v7:25.1.1'
 }

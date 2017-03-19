@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaseLibs/BaseLibs.iml" filepath="$PROJECT_DIR$/BaseLibs/BaseLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImRecordButton/ImRecordButton.iml" filepath="$PROJECT_DIR$/ImRecordButton/ImRecordButton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBApp.iml" filepath="$PROJECT_DIR$/JBApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QrCode/QrCode.iml" filepath="$PROJECT_DIR$/QrCode/QrCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShortVideo/ShortVideo.iml" filepath="$PROJECT_DIR$/ShortVideo/ShortVideo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/layoutmanager/layoutmanager.iml" filepath="$PROJECT_DIR$/layoutmanager/layoutmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pageTransformerlibrary/pageTransformerlibrary.iml" filepath="$PROJECT_DIR$/pageTransformerlibrary/pageTransformerlibrary.iml" />
+    </modules>
+  </component>
+</project>

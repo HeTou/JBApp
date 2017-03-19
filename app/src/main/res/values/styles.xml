@@ -4,7 +4,23 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/white</item>
         <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowContentTransitions">true</item>-->
     </style>
 
+    <style name="SpalshTheme" parent="AppTheme">
+        <item name="android:width">@android:color/transparent</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- 自定义的发布dialog -->
+        <item name="android:windowBackground">@color/transparent_00000000</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="DialogAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/right_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
+    </style>
 
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_000000">#000000</color>
+    <color name="black_38393E">#38393E</color>
+    <color name="gray_cecece">#cecece</color>
+    <color name="transblack_25000000">#25000000</color>
+    <color name="transblack_50000000">#50000000</color>
+    <color name="transblack_75000000">#75000000</color>
+    <color name="transparent_00000000">#00000000</color>
+    <color name="white_FFFFFF">#ffffff</color>
+    <declare-styleable name="ParallaxViewPager"><attr name="mode">
+            <enum name="left_overlay" value="0"/>
+            <enum name="right_overlay" value="1"/>
+            <enum name="none" value="2"/>
+        </attr><attr format="fraction|dimension" name="outset"/><attr format="reference" name="interpolator"/><attr format="dimension" name="shadow_width"/><attr format="reference" name="left_shadow"/><attr format="reference" name="right_shadow"/></declare-styleable>
+    <dimen name="button_height_normal">40dp</dimen>
+    <dimen name="button_height_short">32dp</dimen>
+    <dimen name="button_height_tall">60dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_55">55dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="font_huge">@dimen/sp_50</dimen>
+    <dimen name="font_large">@dimen/sp_20</dimen>
+    <dimen name="font_larger">@dimen/sp_24</dimen>
+    <dimen name="font_normal">@dimen/sp_16</dimen>
+    <dimen name="font_small">@dimen/sp_12</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_17">17sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_19">19sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_21">21sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_50">50sp</dimen>
+    <dimen name="spacing_huge">40dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <string name="back">返回</string>
+    <string name="cancel">取消</string>
+    <string name="confrim">确定</string>
+    <string name="error_play_voice_message">语音消息播放失败</string>
+    <style name="BaseMyDialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--<item name="android:windowIsFloating">true</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+    </style>
+    <style name="HorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/gray_cecece</item>
+    </style>
+    <style name="VerticalLine">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/gray_cecece</item>
+    </style>
+</resources>

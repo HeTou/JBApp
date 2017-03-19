@@ -94,11 +94,12 @@ public class QrCodeScanActivity extends Activity implements SurfaceHolder.Callba
         //闪光灯
         mImgLight = (ImageView) findViewById(R.id.img_qrcode_light);
 
-        mScanPreview = (SurfaceView) findViewById(R.id.capture_preview);
-        mScanContainer = (RelativeLayout) findViewById(R.id.capture_container);
-        mScanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
-        mScanLine = (ImageView) findViewById(R.id.capture_scan_line);
-        //设置阴影
+        mScanPreview = (SurfaceView) findViewById(R.id.capture_preview);        //相机视图
+        mScanContainer = (RelativeLayout) findViewById(R.id.capture_container); //覆盖在相机上面的视图
+        mScanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);  //扫描框
+        mScanLine = (ImageView) findViewById(R.id.capture_scan_line);           //扫描的线
+
+        //设置阴影（扫描框四面设置透明度0.5）
         View shadowTop = findViewById(R.id.capture_mask_top);
         View shadowBottom = findViewById(R.id.capture_mask_bottom);
         View shadowLeft = findViewById(R.id.capture_mask_left);

@@ -1,1 +1,1 @@
-include ':app', ':BaseLibs', ':ImRecordButton', ':ShortVideo', ':QrCode', ':app2', ':3DViewPager', ':app4', ':layoutmanager', ':pageTransformerlibrary'
+include ':app', ':BaseLibs', ':ImRecordButton', ':ShortVideo', ':QrCode', ':layoutmanager', ':pageTransformerlibrary', ':demo'
