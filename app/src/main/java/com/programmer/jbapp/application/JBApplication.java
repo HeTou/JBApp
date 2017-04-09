@@ -2,6 +2,7 @@ package com.programmer.jbapp.application;
 
 import com.lib.base.app.BaseApplication;
 import com.lib.base.log.KLog;
+import com.programmer.jbapp.common.db.GreenDaoHelper;
 import com.programmer.jbapp.common.other.baidu.map.BaiduMapHelper;
 
 import cn.jpush.android.api.JPushInterface;
@@ -19,9 +20,14 @@ public class JBApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        initGreenDAO();
         initJPush();
         initBaiduMap();
         KLog.json(getDeviceInfo(this));
+    }
+
+    private void initGreenDAO() {
+        GreenDaoHelper.initDatabase(this);
     }
 
     public static JBApplication getInstance() {

@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/bar_bg"
     android:clipToPadding="true"
     android:fitsSystemWindows="true"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
+
     <include layout="@layout/activity_title"></include>
-    <ListView
-        android:background="@color/white"
-        android:id="@+id/technique_lv"
+
+    <com.programmer.jbapp.common.widget.refreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshlayout"
+        app:tr_pureScrollMode_on="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/technique_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"></ListView>
+    </com.programmer.jbapp.common.widget.refreshlayout.TwinklingRefreshLayout>
 </LinearLayout>

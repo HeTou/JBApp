@@ -44,12 +44,12 @@
         "source": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\refresh_loading02.png"
     },
     {
-        "merged": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\refresh_loading04.png",
-        "source": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\refresh_loading04.png"
-    },
-    {
         "merged": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\refresh_loading01.png",
         "source": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\refresh_loading01.png"
+    },
+    {
+        "merged": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\refresh_loading04.png",
+        "source": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\refresh_loading04.png"
     },
     {
         "merged": "G:\\AS_item\\JBApp\\BaseLibs\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\refresh_loading09.png",

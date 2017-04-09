@@ -1,4 +1,4 @@
-package com.programmer.jbapp.common.widget;
+package com.programmer.jbapp.common.widget.zft;
 
 import android.content.Context;
 import android.graphics.Canvas;

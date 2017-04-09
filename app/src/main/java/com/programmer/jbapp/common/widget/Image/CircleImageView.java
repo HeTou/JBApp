@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.programmer.jbapp.common.widget;
+package com.programmer.jbapp.common.widget.Image;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -40,6 +40,9 @@ import android.widget.ImageView;
 import com.programmer.jbapp.R;
 
 
+/***
+ * 圆角图片控件
+ */
 public class CircleImageView extends ImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;

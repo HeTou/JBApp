@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:clipChildren="true"
+    android:fitsSystemWindows="true"
+    android:background="@color/bar_bg"
+    android:layout_height="match_parent">
+    <include layout="@layout/activity_title"></include>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/white_FFFFFF"
+        android:layout_height="match_parent">
+        <com.programmer.jbapp.common.widget.zft.ZFTRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:background="@color/blue_wx_progress_bar"
+                android:layout_width="200px"
+                android:padding="50px"
+                android:layout_margin="50px"
+                android:layout_height="200px">
+            </LinearLayout>
+        </com.programmer.jbapp.common.widget.zft.ZFTRefreshLayout>
+    </FrameLayout>
+</LinearLayout>

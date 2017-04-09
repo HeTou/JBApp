@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.animation.AccelerateInterpolator;
 
 import com.programmer.jbapp.R;
+import com.programmer.jbapp.common.widget.zft.WaveView;
 import com.programmer.jbapp.framework.AbsBaseActivity;
 import com.programmer.jbapp.framework.ItemInfo;
 
@@ -15,7 +16,7 @@ import com.programmer.jbapp.framework.ItemInfo;
  */
 public class Widget_WaveViewActivity extends AbsBaseActivity implements ItemInfo {
 
-    private com.programmer.jbapp.common.widget.WaveView waveView;
+    private WaveView waveView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class Widget_WaveViewActivity extends AbsBaseActivity implements ItemInfo
     }
 
     private void initUI() {
-        waveView = (com.programmer.jbapp.common.widget.WaveView) findViewById(R.id.wave);
+        waveView = (WaveView) findViewById(R.id.wave);
         waveView.setDuration(5000);
         waveView.setStyle(Paint.Style.STROKE);
         waveView.setSpeed(400);

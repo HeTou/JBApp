@@ -17,7 +17,7 @@ import com.programmer.jbapp.R;
 import com.programmer.jbapp.common.bean.Moudle;
 import com.programmer.jbapp.common.utils.permission.PermissionsManager;
 import com.programmer.jbapp.common.utils.permission.PermissionsResultAction;
-import com.programmer.jbapp.common.widget.CircleImageView;
+import com.programmer.jbapp.common.widget.Image.CircleImageView;
 import com.programmer.jbapp.common.widget.dialog.MenuDialog;
 import com.programmer.jbapp.framework.AbsBaseActivity;
 import com.programmer.jbapp.module.adapter.MainGridAdapter;
@@ -33,7 +33,7 @@ import java.util.List;
 public class MainActivity extends AbsBaseActivity implements OnItemClickListener,View.OnClickListener{
     private String TAG = "MainActivity";
     private android.widget.GridView mModule_Gv;
-    private com.programmer.jbapp.common.widget.CircleImageView mHeaderView;
+    private CircleImageView mHeaderView;
 
     private MainGridAdapter mAdapter;
     List<Moudle> mList = new ArrayList<Moudle>();
@@ -100,7 +100,7 @@ public class MainActivity extends AbsBaseActivity implements OnItemClickListener
                        Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, new PermissionsResultAction() {
                     @Override
                     public void onGranted() {
-                        Toast.makeText(MainActivity.this,"申请权限成功",Toast.LENGTH_SHORT).show();
+                          Toast.makeText(MainActivity.this,"申请权限成功",Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onDenied(String permission) {

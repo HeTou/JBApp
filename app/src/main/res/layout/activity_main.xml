@@ -24,7 +24,7 @@
             android:background="@color/bar_bg"
             android:gravity="center">
 
-            <com.programmer.jbapp.common.widget.CircleImageView
+            <com.programmer.jbapp.common.widget.Image.CircleImageView
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
