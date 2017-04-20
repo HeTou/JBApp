@@ -11,9 +11,13 @@ import com.programmer.jbapp.common.db.GreenDaoHelper;
 import com.programmer.jbapp.framework.AbsBaseActivity;
 import com.programmer.jbapp.framework.ItemInfo;
 
+import java.util.List;
+
+
 /**
  * zft
  * 2017/4/7.
+ * 不支持复合主键
  */
 
 public class GreenDaoActivity extends AbsBaseActivity implements ItemInfo, View.OnClickListener {
@@ -68,18 +72,30 @@ public class GreenDaoActivity extends AbsBaseActivity implements ItemInfo, View.
         mQuery.setOnClickListener(this);
     }
 
+    private long id = 0 ;
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.add:
-                User user = new User((long)1,"中分套",0);
+            case R.id.add: {
+                User user = new User(id, "中分套", 0);
                 long insert = userDao.insert(user);
-                break;
-            case R.id.del:
-                break;
-            case R.id.update:
-                break;
+                id+=2;
+            }
+            break;
+            case R.id.del: {
+                List<User> userList = (List<User>) userDao.queryBuilder().where(UserDao.Properties.Id.le(10)).build().list();
+                userDao.deleteInTx(userList);
+                System.out.print("删除成功了，应该");
+            }
+            break;
+            case R.id.update: {
+                User user = new User((long) 2,"anye0803", 0);
+                userDao.update(user);
+            }
+            break;
             case R.id.query:
+                List<User> users = userDao.loadAll();
+                System.out.println(users.toString());
                 break;
         }
     }

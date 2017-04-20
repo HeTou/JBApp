@@ -26,4 +26,5 @@ dependencies {
     //    compile "com.android.support:appcompat-v7:${LIB_ANDROID_SUPPORT_VERSION}"
     compile 'com.android.support:appcompat-v7:24.1.1'
     //    compile project(path: ':app')
+    compile 'com.jakewharton:disklrucache:2.0.2'
 }

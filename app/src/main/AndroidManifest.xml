@@ -102,10 +102,22 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+        <!--OrmLite数据库-->
+        <activity
+            android:name="com.programmer.jbapp.module.technique.item.OrmLiteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
 
         <!--控件列表-->
         <activity
             android:name="com.programmer.jbapp.module.view.item.Widget_ZFTRefreshLayout"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--OkHttp-->
+        <activity
+            android:name="com.programmer.jbapp.module.technique.item.OKHttpActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />

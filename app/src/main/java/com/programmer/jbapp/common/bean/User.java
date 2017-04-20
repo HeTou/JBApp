@@ -1,5 +1,9 @@
 package com.programmer.jbapp.common.bean;
 
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -21,13 +25,20 @@ import org.greenrobot.greendao.annotation.Transient;
 @Entity
 public class User {
     @Id(autoincrement = true)
+    @DatabaseField(id =true)
     private Long id;
 
     @Property(nameInDb = "USERNAME")
+    @DatabaseField()
     private String name;
 
     @NotNull
+    @DatabaseField
     private int repos;
+
+    @Transient
+    @ForeignCollectionField() // 必须
+    private ForeignCollection<BankCard> cardsList;
 
     @Transient
     private int tempUsageCount;
@@ -74,5 +85,23 @@ public class User {
 
     public void setTempUsageCount(int tempUsageCount) {
         this.tempUsageCount = tempUsageCount;
+    }
+
+    public ForeignCollection<BankCard> getCardsList() {
+        return cardsList;
+    }
+
+    public void setCardsList(ForeignCollection<BankCard> cardsList) {
+        this.cardsList = cardsList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", repos=" + repos +
+                ", cardsList=" + cardsList +
+                '}';
     }
 }

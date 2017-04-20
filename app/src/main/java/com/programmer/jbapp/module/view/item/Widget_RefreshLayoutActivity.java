@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.programmer.jbapp.R;
 import com.programmer.jbapp.common.widget.refreshlayout.TwinklingRefreshLayout;
-import com.programmer.jbapp.common.widget.refreshlayout.header.bezierlayout.BezierLayout;
+import com.programmer.jbapp.common.widget.refreshlayout.header.SinaRefreshView;
 import com.programmer.jbapp.framework.AbsBaseActivity;
 import com.programmer.jbapp.framework.ItemInfo;
 
@@ -20,9 +20,9 @@ public class Widget_RefreshLayoutActivity extends AbsBaseActivity implements Ite
         super.onCreate(savedInstanceState);
         setContentView(R.layout.refreshlayout_activity);
         aa  = (TwinklingRefreshLayout) findViewById(R.id.aa);
-        BezierLayout headerView = new BezierLayout(this);
-//        aa.setHeaderView(headerView);
-        aa.setPureScrollModeOn(true);
+        SinaRefreshView headerView = new SinaRefreshView(this);
+        aa.setHeaderView(headerView);
+//        aa.setPureScrollModeOn(true);
     }
 
     @Override

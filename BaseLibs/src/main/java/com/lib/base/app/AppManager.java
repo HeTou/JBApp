@@ -1,7 +1,12 @@
 package com.lib.base.app;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Environment;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -133,5 +138,42 @@ public class AppManager
 
             mStackList.removeAll(list);
         }
+    }
+
+    /***
+     * 获取app缓存路径
+     * @param context
+     * @param uniqueName
+     * @return
+     */
+    public File getDiskCacheDir(Context context, String uniqueName) {
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+                || !Environment.isExternalStorageRemovable()) {
+            cachePath = context.getExternalCacheDir().getPath();
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        File file = new File(cachePath + File.separator + uniqueName);
+        if(!file.exists()){
+            file.mkdirs();
+        }
+        return file;
+    }
+
+    /***
+     * 获取缓存路径
+     * @param context
+     * @return
+     */
+    public int getAppVersion(Context context) {
+        PackageInfo info = null;
+        try {
+            info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return info.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+       return 1;
     }
 }

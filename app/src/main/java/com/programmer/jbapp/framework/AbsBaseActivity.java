@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.programmer.jbapp.R;
 import com.programmer.jbapp.common.StyleConfig;
@@ -77,7 +76,7 @@ public class AbsBaseActivity extends AppCompatActivity {
         super.onStart();
         if (!isCurrentRunningForeground) {
             // Log.d(TAG, ">>>>>>>>>>>>>>>>>>>切到前台 activity process");
-            Toast.makeText(this, "切到前台", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "切到前台", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -87,7 +86,7 @@ public class AbsBaseActivity extends AppCompatActivity {
         isCurrentRunningForeground = isRunningForeground();
         if (!isCurrentRunningForeground) {
             // Log.d(TAG,">>>>>>>>>>>>>>>>>>>切到后台 activity process");
-            Toast.makeText(this, "切到后台", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "切到后台", Toast.LENGTH_SHORT).show();
         }
     }
 }
